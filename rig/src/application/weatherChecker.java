@@ -9,10 +9,12 @@ import java.net.URLConnection;
 
 public class weatherChecker {
 	public String getTemp() throws IOException {
-//		String APIkey = "6089342a45d76e01e12c36bd94042e73";
-//		String location = "San Jose";
+		//String APIkey = "6089342a45d76e01e12c36bd94042e73";
+		//String location = "San Jose";
+		
 		String urlString = "http://api.openweathermap.org/data/2.5/weather?q=San%20Jose&appid=6089342a45d76e01e12c36bd94042e73&units=imperial";
 		StringBuilder result = new StringBuilder();
+		
 		try {
 			URL url = new URL(urlString);
 			URLConnection conn = url.openConnection();
@@ -22,13 +24,14 @@ public class weatherChecker {
 			while((output = rd.readLine()) != null){
 				result.append(output);
 			}
+	
 			rd.close();
 			System.out.print(result);
 		} 
 		catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
-		
+		//TODO Parse output so that it only prints out the temperature
 		return result.toString();
 	}
 	public static void main(String[] args) throws IOException {
