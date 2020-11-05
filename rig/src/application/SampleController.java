@@ -12,10 +12,13 @@ public class SampleController {
 	@FXML Label weatherUI;
 	@FXML ImageView pantsView;
 	@FXML ImageView shirtView;
-
+	@FXML ImageView weatherIcon;
 	//Sets the weather in the UI
 	public void setWeather() throws IOException {
 		weatherUI.setText(new weatherChecker().getTemp());
+		System.out.print(new weatherChecker().getTemp());
+		weatherUI.setVisible(true);
+		weatherIcon.setVisible(true);
 	}
 	
 	//Displays only one set of outfits

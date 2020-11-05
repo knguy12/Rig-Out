@@ -9,13 +9,22 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SampleController">
+<VBox alignment="CENTER" prefHeight="662.0" prefWidth="1146.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SampleController">
    <children>
-      <Label fx:id="weatherUI" alignment="CENTER" prefHeight="112.0" prefWidth="212.0" text="86°">
-         <font>
-            <Font name="Consolas" size="68.0" />
-         </font>
-      </Label>
+      <HBox>
+         <children>
+            <Label fx:id="weatherUI" alignment="CENTER" prefHeight="147.0" prefWidth="154.0" text="86°" visible="false">
+               <font>
+                  <Font name="Microsoft JhengHei UI Light" size="68.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="weatherIcon" fitHeight="149.0" fitWidth="169.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../iconImages/sunnyIcon.png" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
       <HBox alignment="CENTER">
          <children>
             <ImageView fx:id="pantsView" fitHeight="253.0" fitWidth="260.0" pickOnBounds="true" preserveRatio="true" visible="false">
@@ -28,11 +37,25 @@
                </image></ImageView>
          </children>
       </HBox>
-      <Button alignment="CENTER" mnemonicParsing="false" onAction="#showOutfit" prefHeight="49.0" prefWidth="147.0" text="Get Outfit">
+      <HBox alignment="CENTER">
          <VBox.margin>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </VBox.margin>
-      </Button>
-      <VBox />
+         <children>
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#showOutfit" prefHeight="49.0" prefWidth="147.0" text="Get Outfit">
+               <HBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </HBox.margin>
+            </Button>
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#setWeather" prefHeight="49.0" prefWidth="147.0" text="Get Weather">
+               <padding>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </padding>
+               <HBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
    </children>
 </VBox>
