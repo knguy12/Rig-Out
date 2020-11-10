@@ -13,6 +13,7 @@ public class weatherChecker {
 		String urlString = "http://api.openweathermap.org/data/2.5/weather?q=San%20Jose&appid=6089342a45d76e01e12c36bd94042e73&units=imperial";
 		StringBuilder result = new StringBuilder();
 		
+		//reads the data from weather API
 		try {
 			URL url = new URL(urlString);
 			URLConnection conn = url.openConnection();
@@ -28,7 +29,10 @@ public class weatherChecker {
 		catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
-		String temp = result.toString().substring(147, 152);
+		//Parses the JSON data and finds the temperature value
+		String temp = result.toString();
+		String[] totalJSON = temp.split("\\{");
+		temp = totalJSON[4].substring(7,12);
 		return temp;
 	}
 	public static void main(String[] args) throws IOException {
