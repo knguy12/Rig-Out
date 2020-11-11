@@ -31,7 +31,6 @@ public class SampleController {
 	
 	//Checks which box was checked and picks and outfit with that label. If not casual is defaulted
 	public String checkEvent() {
-		//eventRecognizer event = new eventRecognizer();
 		String chosenEvent = "casual";
 		if(formal.isSelected()) {
 			chosenEvent = "formal";
@@ -44,7 +43,7 @@ public class SampleController {
 		}
 		return chosenEvent;
 	}
-	//Displays only one set of outfits
+	//Displays set of clothes based on if the user select formal, casual, lounge
 	//TODO allow for users to add into their clothes into image file and let application pick shirt and pants randomly 
 	public void showOutfit() {
 		Image pantsImage = new Image("file:..\\..\\clothesImages\\pants_blue_casual_hot_1.png");
