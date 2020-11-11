@@ -28,14 +28,10 @@
       </HBox>
       <HBox alignment="CENTER">
          <children>
-            <ImageView fx:id="pantsView" fitHeight="253.0" fitWidth="260.0" pickOnBounds="true" preserveRatio="true" visible="false">
-               <image>
-                  <Image url="@../../clothesImages/pants_blue_1.png" />
-               </image></ImageView>
-            <ImageView fx:id="shirtView" fitHeight="263.0" fitWidth="380.0" pickOnBounds="true" preserveRatio="true" visible="false">
-               <image>
-                  <Image url="@../../clothesImages/shirt_white_1.jpg" />
-               </image></ImageView>
+            <ImageView fx:id="apparelView" fitHeight="263.0" fitWidth="303.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="pantsView" fitHeight="263.0" fitWidth="303.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="shirtView" fitHeight="263.0" fitWidth="303.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="shoeView" fitHeight="263.0" fitWidth="303.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </HBox>
       <HBox alignment="CENTER">

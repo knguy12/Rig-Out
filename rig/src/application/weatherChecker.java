@@ -35,6 +35,13 @@ public class weatherChecker {
 		temp = totalJSON[4].substring(7,12);
 		return temp;
 	}
+	
+	public boolean isHot() throws NumberFormatException, IOException {
+		double temperature  = Double.parseDouble(getTemp());
+		if(temperature < 80)
+			return false;
+		return true;
+	}
 	public static void main(String[] args) throws IOException {
 		weatherChecker check = new weatherChecker();
 		String temperature = check.getTemp();
