@@ -2,19 +2,19 @@ package application;
 
 public class eventRecognizer {
 	
-	//Removes formal outfits from selection if user did not select it
-	public void removeFormalOutfits() {
-		
+	//Tells system to pick an outfit from outfits labeled casual
+	public String addFormalOutfits() {
+		return "casual";
 	}
 	
-	//Removes casual outfits from outfits if user did not select it
-	public void removeCasualOutfits() {
-		
+	//Tells system to pick an outfit from outfits labeled formal
+	public String addCasualOutfits() {
+		return "formal";
 	}
 	
-	//Remove lounge wear from outfits if user did not select it
-	public void removeLoungeWear() {
-		
+	//Tells system to pick an outfit from outfits labeled lounge
+	public String addLoungeOutfits() {
+		return "lounge";
 	}
 
 }

@@ -29,24 +29,26 @@ public class SampleController {
 		weatherIcon.setVisible(true);
 	}
 	
-	//Checks which boxes were not checked and removes those pieces of clothing from being an option
-	public void checkEvent() {
-		eventRecognizer event = new eventRecognizer();
-		if(!formal.isSelected()) {
-			event.removeFormalOutfits();
+	//Checks which box was checked and picks and outfit with that label. If not casual is defaulted
+	public String checkEvent() {
+		//eventRecognizer event = new eventRecognizer();
+		String chosenEvent = "casual";
+		if(formal.isSelected()) {
+			chosenEvent = "formal";
 		}
-		if(!casual.isSelected()) {
-			event.removeCasualOutfits();
+		if(casual.isSelected()) {
+			chosenEvent = "casual";
 		}
-		if(!lounge.isSelected()) {
-			event.removeLoungeWear();
+		if(lounge.isSelected()) {
+			chosenEvent = "lounge";
 		}
+		return chosenEvent;
 	}
 	//Displays only one set of outfits
 	//TODO allow for users to add into their clothes into image file and let application pick shirt and pants randomly 
 	public void showOutfit() {
-		Image shirtImage = new Image("file:..\\..\\clothesImages\\pants_blue_1.png");
-		Image pantsImage = new Image("file:..\\..\\clothesImages\\shirt_white_1.jpg");
+		Image pantsImage = new Image("file:..\\..\\clothesImages\\pants_blue_casual_hot_1.png");
+		Image shirtImage = new Image("file:..\\..\\clothesImages\\shirt_white_"+ checkEvent() +"_hot_1.jpg");
 		Image shoeImage = new Image("file:..\\..\\clothesImages\\shoes_black_casual_hot_1.jpg");
 		Image apparelImage = new Image("file:..\\..\\clothesImages\\watch_white_formal_hot_1.jpg");
 		pantsView.setImage(pantsImage);
