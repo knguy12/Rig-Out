@@ -28,10 +28,22 @@
       </HBox>
       <HBox alignment="CENTER">
          <children>
-            <ImageView fx:id="apparelView" fitHeight="263.0" fitWidth="303.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="pantsView" fitHeight="263.0" fitWidth="303.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="shirtView" fitHeight="263.0" fitWidth="303.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="shoeView" fitHeight="263.0" fitWidth="303.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="apparelView" fitHeight="263.0" fitWidth="303.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../clothesImages/Apparel/apparel_white_1.jpg" />
+               </image></ImageView>
+            <ImageView fx:id="pantsView" fitHeight="263.0" fitWidth="303.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../clothesImages/Shirts/shirt_black_casual_hot_1.jpg" />
+               </image></ImageView>
+            <ImageView fx:id="shirtView" fitHeight="263.0" fitWidth="303.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../clothesImages/Pants/pants_white_casual_cold_1.jpg" />
+               </image></ImageView>
+            <ImageView fx:id="shoeView" fitHeight="263.0" fitWidth="303.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../clothesImages/Shoes/shoe_blue_casual_1.jpg" />
+               </image></ImageView>
          </children>
       </HBox>
       <HBox alignment="CENTER">
