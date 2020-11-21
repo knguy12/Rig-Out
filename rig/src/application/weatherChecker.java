@@ -9,7 +9,7 @@ import java.net.URLConnection;
 
 public class weatherChecker {
 	public String getTemp() throws IOException {
-
+		// test
 		String urlString = "http://api.openweathermap.org/data/2.5/weather?q=San%20Jose&appid=6089342a45d76e01e12c36bd94042e73&units=imperial";
 		StringBuilder result = new StringBuilder();
 
