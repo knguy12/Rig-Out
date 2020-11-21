@@ -24,9 +24,15 @@ public class SampleController {
 	//Sets the weather in the UI
 	public void setWeather() throws IOException {
 		weatherUI.setText(new weatherChecker().getTemp());
-		System.out.print(new weatherChecker().getTemp());
 		weatherUI.setVisible(true);
 		weatherIcon.setVisible(true);
+	}
+	//Checks if the weather is currently hot or cold
+	public String hotOrCold() throws NumberFormatException, IOException {
+		weatherChecker weather = new weatherChecker();
+		if(Double.parseDouble(weather.getTemp()) < 70.0)
+			return "cold";
+		return "hot";
 	}
 	
 	//Checks which box was checked and picks and outfit with that label. If not casual is defaulted
@@ -43,13 +49,13 @@ public class SampleController {
 		}
 		return chosenEvent;
 	}
-	//Displays set of clothes based on if the user select formal, casual, lounge
-	//TODO allow for users to add into their clothes into image file and let application pick shirt and pants randomly 
-	public void showOutfit() {
-		Image pantsImage = new Image("file:..\\..\\clothesImages\\pants_blue_casual_hot_1.png");
-		Image shirtImage = new Image("file:..\\..\\clothesImages\\shirt_white_"+ checkEvent() +"_hot_1.jpg");
-		Image shoeImage = new Image("file:..\\..\\clothesImages\\shoes_black_casual_hot_1.jpg");
-		Image apparelImage = new Image("file:..\\..\\clothesImages\\watch_white_formal_hot_1.jpg");
+	//Displays set of clothes based on if the user select formal, casual, lounge and whether it is hot or cold
+	//TODO Add in way to detect color and determine outfits based on that
+	public void showOutfit() throws NumberFormatException, IOException{
+		Image pantsImage = new Image("file:..\\..\\clothesImages\\Pants\\pants_white_" + checkEvent() + "_" + hotOrCold() + "_1.jpg");
+		Image shirtImage = new Image("file:..\\..\\clothesImages\\Shirts\\shirt_blue_" + checkEvent() +"_" + hotOrCold() + "_1.jpg");
+		Image shoeImage = new Image("file:..\\..\\clothesImages\\Shoes\\shoe_blue_" + checkEvent() + "_1.jpg");
+		Image apparelImage = new Image("file:..\\..\\clothesImages\\Apparel\\apparel_white_1.jpg");
 		pantsView.setImage(pantsImage);
 		shirtView.setImage(shirtImage);
 		apparelView.setImage(apparelImage);
