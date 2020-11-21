@@ -35,6 +35,7 @@ public class weatherChecker {
 		return temp;
 	}
 
+	// checks if the temperature can be considered hot or not
 	public boolean isHot() throws NumberFormatException, IOException {
 		double temperature = Double.parseDouble(getTemp());
 		if (temperature < 80)
@@ -42,6 +43,7 @@ public class weatherChecker {
 		return true;
 	}
 
+	// checks if the temperature can be considered cold or not
 	public boolean isCold() throws NumberFormatException, IOException {
 		double temperature = Double.parseDouble(getTemp());
 		if (temperature > 50)

@@ -7,4 +7,5 @@ public class color {
 		colors = new String[] { "Red", "Blue", "Green", "Yellow", "Brown", "Black", "White", "Grey", "Orange", "Purple",
 				"Indigo" };
 	}
+
 }
