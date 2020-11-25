@@ -52,10 +52,12 @@ public class SampleController {
 	//Displays set of clothes based on if the user select formal, casual, lounge and whether it is hot or cold
 	//TODO Add in way to detect color and determine outfits based on that
 	public void showOutfit() throws NumberFormatException, IOException{
+		
 		Image pantsImage = new Image("file:..\\..\\clothesImages\\Pants\\pants_white_" + checkEvent() + "_" + hotOrCold() + "_1.jpg");
 		Image shirtImage = new Image("file:..\\..\\clothesImages\\Shirts\\shirt_blue_" + checkEvent() +"_" + hotOrCold() + "_1.jpg");
 		Image shoeImage = new Image("file:..\\..\\clothesImages\\Shoes\\shoe_blue_" + checkEvent() + "_1.jpg");
 		Image apparelImage = new Image("file:..\\..\\clothesImages\\Apparel\\apparel_white_1.jpg");
+		
 		pantsView.setImage(pantsImage);
 		shirtView.setImage(shirtImage);
 		apparelView.setImage(apparelImage);
