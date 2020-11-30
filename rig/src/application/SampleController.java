@@ -36,6 +36,8 @@ public class SampleController {
 	CheckBox white;
 	@FXML
 	CheckBox black;
+	@FXML
+	CheckBox green;
 
 	// Sets the weather in the UI
 	public void setWeather() throws IOException {
