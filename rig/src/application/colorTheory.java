@@ -1,56 +1,36 @@
 package application;
 
+import java.io.IOException;
+
 public class colorTheory {
-	public static color selectedColor;
-
-	// test
-	// match complementary colors
-	@SuppressWarnings("unlikely-arg-type")
-	public static Boolean matchesComplementary() {
-		if (selectedColor.equals("Red") && selectedColor.equals("Green"))
-			return true;
-		if (selectedColor.equals("Blue") && selectedColor.equals("Orange"))
-			return true;
-		if (selectedColor.equals("Yellow") && selectedColor.equals("Purple"))
-			return true;
-		return false;
+	
+	private String[] color = {"black", "blue", "green", "orange", "purple", "red", "white", "yellow"};
+	private String[] compBlue = {"red", "yellow", "white", "black", "purple"};
+	private String[] compGreen = {"orange", "white", "black"};
+	private String[] compOrange = {"green", "blue", "white", "black"};
+	private String[] compPurple = {"orange", "white", "green", "black", "blue"};
+	private String[] compRed = {"blue", "white", "black"};
+	private String[] compYellow = {"green", "blue", "white", "black"};
+	
+	public String findMatchingColor(String chosenColor) {
+		if(chosenColor.equals("blue"))
+			return compBlue[(int)(Math.random() * compBlue.length)];
+		else if(chosenColor.equals("green"))
+			return compGreen[(int)(Math.random() * compGreen.length)];
+		else if(chosenColor.equals("orange"))
+			return compOrange[(int)(Math.random() * compOrange.length)];
+		else if(chosenColor.equals("purple"))
+			return compPurple[(int)(Math.random() * compPurple.length)];
+		else if(chosenColor.equals("red"))
+			return compRed[(int)(Math.random() * compRed.length)];
+		else if(chosenColor.equals("yellow"))
+			return compYellow[(int)(Math.random() * compYellow.length)];
+		else if(chosenColor.equals("black") || chosenColor.equals("white"))
+			return color[(int)(Math.random() * color.length)];
+		return "Could not Find Color";
 	}
-
-	// match primary colors
-	@SuppressWarnings("unlikely-arg-type")
-	public static Boolean matchesPrimary() {
-		if (selectedColor.equals("Red") && selectedColor.equals("Blue") && selectedColor.equals("Yellow")) {
-			return true;
-		}
-		return false;
-	}
-
-	// match secondary colors
-	@SuppressWarnings("unlikely-arg-type")
-	public static Boolean matchesSecondary() {
-		if (selectedColor.equals("Orange") && selectedColor.equals("Purple") && selectedColor.equals("Orange")) {
-			return true;
-		}
-		return false;
-	}
-
-	// Not sure if we should keep these two or not, might over complicate things
-	// given they're in between colors
-	// match analogous colors
-	@SuppressWarnings("unlikely-arg-type")
-	public static Boolean matchesAnalogous() {
-		if (selectedColor.equals("Red") || selectedColor.equals("Red-Violet") || selectedColor.equals("Violet")
-				|| selectedColor.equals("Blue-Violet")) {
-			return true;
-		}
-		return false;
-	}
-
-	// match intermediate colors
-	public static Boolean matchesIntermediate(color intermediateColor) {
-		if (selectedColor == intermediateColor) {
-			return true;
-		}
-		return false;
+	public static void main(String[] args) {
+		colorTheory color = new colorTheory();
+		System.out.print(color.findMatchingColor("black"));
 	}
 }
