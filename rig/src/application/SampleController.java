@@ -47,6 +47,7 @@ public class SampleController implements Initializable {
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		colorPicker.getItems().addAll("Black", "Blue", "Green", "Orange", "Purple", "Red", "White", "Yellow");
+		colorPicker.setValue("Black");
 	}
 	public String getSelectedColor() {
 		return colorPicker.getValue();

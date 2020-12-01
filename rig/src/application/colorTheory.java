@@ -47,7 +47,7 @@ public class colorTheory {
 	public String analogous(String chosenColor) {
 		if(chosenColor.equals("red") || chosenColor.equals("green") || chosenColor.equals("yellow"))
 			return analogousR[(int)(Math.random() * analogousR.length)];
-		else if(chosenColor.equals("red") || chosenColor.equals("green") || chosenColor.equals("yellow")
+		else if(chosenColor.equals("red") || chosenColor.equals("green") || chosenColor.equals("yellow"))
 				return analogousB[(int)Math.random() * analogousB.length];
 		return "Could not Find Color";
 	}
