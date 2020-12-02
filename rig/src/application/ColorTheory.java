@@ -1,7 +1,8 @@
 package application;
 
-public class colorTheory {
-
+public class ColorTheory {
+	
+	//Lists all colors available and their matching complimentary color
 	private String[] color = { "black", "blue", "green", "orange", "purple", "red", "white", "yellow" };
 	private String[] compBlue = { "red", "yellow", "white", "black", "purple" };
 	private String[] compGreen = { "orange", "white", "black" };
@@ -10,11 +11,14 @@ public class colorTheory {
 	private String[] compRed = { "blue", "white", "black" };
 	private String[] compYellow = { "green", "blue", "white", "black" };
 
+	//Lists all colors and their respective primary and secondary color
 	private String[] primary = { "red", "yellow", "blue" };
 	private String[] secondary = { "green", "orange", "purple" };
 	private String[] monochrome = { "black", "white" };
-	private String[] analogousR = { "red", "yellow", "green" };
-	private String[] analogousB = { "green", "blue", "purple" };
+	
+	//Lists all matching analogous colors
+	private String[] analogousR = { "red", "yellow", "orange" };
+	private String[] analogousB = { "blue", "purple", "green" };
 
 	public String findMatchingColor(String chosenColor) {
 		if (chosenColor.equals("blue"))
@@ -45,15 +49,17 @@ public class colorTheory {
 	}
 
 	public String analogous(String chosenColor) {
-		if(chosenColor.equals("red") || chosenColor.equals("green") || chosenColor.equals("yellow"))
+		if(chosenColor.equals("red") || chosenColor.equals("orange") || chosenColor.equals("yellow"))
 			return analogousR[(int)(Math.random() * analogousR.length)];
-		else if(chosenColor.equals("red") || chosenColor.equals("green") || chosenColor.equals("yellow"))
+		else if(chosenColor.equals("blue") || chosenColor.equals("purple") || chosenColor.equals("green"))
 				return analogousB[(int)Math.random() * analogousB.length];
+		else if(chosenColor.equals("black") || chosenColor.equals("white"))
+			return monochrome[(int) (Math.random() * monochrome.length)];
 		return "Could not Find Color";
 	}
 
 	public static void main(String[] args) {
-		colorTheory color = new colorTheory();
+		ColorTheory color = new ColorTheory();
 		System.out.print(color.findMatchingColor("black"));
 	}
 }
