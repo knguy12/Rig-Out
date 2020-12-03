@@ -133,7 +133,7 @@
       </HBox>
       <HBox alignment="CENTER">
          <children>
-            <Label alignment="CENTER" prefHeight="26.0" prefWidth="440.0" text="How would you like us to match your colors? Please Select One">
+            <Label alignment="CENTER" prefHeight="29.0" prefWidth="485.0" text="What would you like the main color of your outfit to be? Please select one">
                <font>
                   <Font name="Cambria Math" size="15.0" />
                </font>
