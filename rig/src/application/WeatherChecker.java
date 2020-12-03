@@ -41,11 +41,4 @@ public class WeatherChecker {
 			return "cold";
 		return "hot";
 	}
-
-	public static void main(String[] args) throws IOException {
-		WeatherChecker check = new WeatherChecker();
-		String temperature = check.getTemp();
-		System.out.println(temperature + " " + "degrees fahrenheit");
-		System.out.println(check.hotOrCold());
-	}
 }

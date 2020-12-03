@@ -18,40 +18,25 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 public class SampleController implements Initializable {
-	@FXML
-	Label weatherUI;
-	@FXML
-	ImageView pantsView;
-	@FXML
-	ImageView likeButton;
-	@FXML
-	ImageView dislikeButton;
-	@FXML
-	ImageView shirtView;
-	@FXML
-	ImageView shoeView;
-	@FXML
-	ImageView apparelView;
-	@FXML
-	ImageView weatherIcon;
-	@FXML
-	CheckBox formal;
-	@FXML
-	CheckBox casual;
-	@FXML
-	ChoiceBox<String> colorPicker;
-	@FXML
-	CheckBox dislike;
-	@FXML
-	CheckBox like;
-	@FXML 
-	Label likeDislikePrompt;
-	@FXML
-	CheckBox showLiked;
-	@FXML
-	ChoiceBox<String> theoryPicker;
+	@FXML Label weatherUI;
+	@FXML ImageView pantsView;
+	@FXML ImageView likeButton;
+	@FXML ImageView dislikeButton;
+	@FXML ImageView shirtView;
+	@FXML ImageView shoeView;
+	@FXML ImageView apparelView;
+	@FXML ImageView weatherIcon;
+	@FXML CheckBox formal;
+	@FXML CheckBox casual;
+	@FXML ChoiceBox<String> colorPicker;
+	@FXML CheckBox dislike;
+	@FXML CheckBox like;
+	@FXML Label likeDislikePrompt;
+	@FXML CheckBox showLiked;
+	@FXML ChoiceBox<String> theoryPicker;
+	
 	@Override
-	//Intializes the colorPicker and theoryPicker combo box and their values
+	//Initializes the colorPicker and theoryPicker combo box and their values
 	//colorPicker default value is set to black
 	//theoryPicker default value is set to complimentary
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -81,12 +66,8 @@ public class SampleController implements Initializable {
 	// Casual is defaulted if none are selected
 	public String checkEvent() {
 		String chosenEvent = "casual";
-		if (formal.isSelected()) {
-			return "formal";
-		}
-		if (casual.isSelected()) {
-			return "casual";
-		}
+		if (formal.isSelected()) return "formal";
+		if (casual.isSelected()) return "casual";
 		return chosenEvent;
 	}
 	//finds matching colors based on the color theory selected and finds matching colors
@@ -94,12 +75,10 @@ public class SampleController implements Initializable {
 		String mainColor = getSelectedColor();
 		String chosenTheory = getTheory();
 		ColorTheory match = new ColorTheory();
-		if(chosenTheory == "Anagolous")
-			return match.analogous(mainColor);
-		else if(chosenTheory == "Primary")
-			return match.primarySecondary(mainColor);
-		else
-			return match.findMatchingColor(mainColor);
+		
+		if(chosenTheory == "Anagolous") return match.analogous(mainColor);
+		else if(chosenTheory == "Primary") return match.primarySecondary(mainColor);
+		else return match.findMatchingColor(mainColor);
 	}
 	//creates the final array containing the outfit color scheme
 	public String[] finalOutfitScheme() {
@@ -122,7 +101,6 @@ public class SampleController implements Initializable {
 	public void dislike() {
 		likeDislikePrompt.setText("Outfit disliked!");
 		dislikedOutfits.add(chosenOutfit);
-		System.out.print("Disliked: " + Arrays.toString(chosenOutfit));
 	}
 	
 	// Displays set of clothes based on if the user select formal, casual, lounge
@@ -134,13 +112,11 @@ public class SampleController implements Initializable {
 		chosenOutfit = colorScheme;
 		
 		//restricts color schemes to only the ones the user has liked 
-		if(showLiked.isSelected())
-			colorScheme = likedOutfits.get((int) (Math.random() * likedOutfits.size()));
+		if(showLiked.isSelected()) colorScheme = likedOutfits.get((int) (Math.random() * likedOutfits.size()));
 		
 		//If chosen color scheme is disliked skip until found color scheme that is not disliked
-		while(dislikedOutfits.contains(colorScheme)) {
+		while(dislikedOutfits.contains(colorScheme)) 
 			colorScheme = finalOutfitScheme();
-		}
 	
 		String shirtChosen = "shirt_" + colorScheme[0] + "_" + checkEvent() + "_" + temp + "_1.jpg";
 		String apparelChosen = "apparel_" + colorScheme[1] + "_1.jpg";
@@ -162,8 +138,5 @@ public class SampleController implements Initializable {
 		dislikeButton.setVisible(true);
 		likeDislikePrompt.setText("");
 		showLiked.setVisible(true);
-		
-		System.out.println(Arrays.toString(colorScheme));
-
 	}
 }

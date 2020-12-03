@@ -60,6 +60,5 @@ public class ColorTheory {
 
 	public static void main(String[] args) {
 		ColorTheory color = new ColorTheory();
-		System.out.print(color.findMatchingColor("black"));
 	}
 }
